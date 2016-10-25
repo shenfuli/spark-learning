@@ -17,8 +17,24 @@ mvn archetype:generate \ <br>
 创建项目后就可以编写scala代码，以上仅生成scala项目的目录，如果需要java，可以参考[1] 
 
 # how to package&deploy spark programing 
-mvn clean compile package  执行完成会生成一个jar，然后参考bin/wordcount.sh 的shell脚本执行任务
+mvn clean compile package <br>
+执行完成会生成一个jar，然后参考bin/wordcount.sh 的shell脚本执行任务 <br>
 
+#!/bin/bash <br>
+source ~/.bashrc <br>
+${SPARK_HOME}/bin/spark-submit \ <br>
+    --class org.training.spark.WordCount \ <br>
+    --master yarn-cluster \ <br>
+    --num-executors 2 \ <br>
+    --driver-memory 2g \ <br>
+    --executor-memory 2g \ <br>
+    --executor-cores 1 \ <br>
+    /home/hadoop/fuli.shen/lib/sparktraining-1.0-SNAPSHOT.jar \ <br>
+    /user/fuli.shen/data/wordcount/input \ <br>
+    /user/fuli.shen/data/wordcount/output <br>
+
+参数说明: <br>
+num-executors 启动executors的数量，executor-cores 启动的task任务数，实际的每次执行的task=num-executors * executor-cores
 
 # reference
 
