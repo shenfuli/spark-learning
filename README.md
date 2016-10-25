@@ -20,8 +20,6 @@ mvn archetype:generate \ <br>
 mvn clean compile package <br>
 执行完成会生成一个jar，然后参考bin/wordcount.sh 的shell脚本执行任务 <br>
 
-#!/bin/bash <br>
-source ~/.bashrc <br>
 ${SPARK_HOME}/bin/spark-submit \ <br>
     --class org.training.spark.WordCount \ <br>
     --master yarn-cluster \ <br>
