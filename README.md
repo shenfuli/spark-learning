@@ -20,3 +20,5 @@ mvn archetype:generate \
 
 [1]  maven建立java和scala混合的项目
 http://blog.csdn.net/shenfuli/article/details/52668556
+[2] windowsGithub上传代码
+http://www.cnblogs.com/ruofengzhishang/p/3842587.html
