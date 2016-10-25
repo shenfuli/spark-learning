@@ -11,7 +11,7 @@ mvn archetype:generate \ <br>
 -DinteractiveMode=false \ <br>
 -Dversion=1.0-SNAPSHOT \ <br>
 -DgroupId=org.training.spark \ <br>
--DartifactId=sparktraining \<br>
+-DartifactId=sparktraining <br>
 
 
 创建项目后就可以编写scala代码，以上仅生成scala项目的目录，如果需要java，可以参考[1] 
