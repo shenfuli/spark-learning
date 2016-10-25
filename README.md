@@ -16,6 +16,10 @@ mvn archetype:generate \
 
 创建项目后就可以编写scala代码，以上仅生成scala项目的目录，如果需要java，可以参考[1] 
 
+# how to package&deploy spark programing 
+mvn clean compile package
+执行完成后会生成一个jar包
+
 # reference
 
 ##### [1]  maven建立java和scala混合的项目
