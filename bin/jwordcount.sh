@@ -1,6 +1,6 @@
 #!/bin/bash
 source ~/.bashrc
-/home/hadoop/caishi/local/spark-1.6.0/bin/spark-submit \
+${SPARK_HOME}/bin/spark-submit \
     --class org.training.spark.JWordCount \
     --master yarn-cluster \
     --num-executors 2 \
