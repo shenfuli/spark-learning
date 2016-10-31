@@ -14,15 +14,11 @@ object WordCount {
       print("usage:org.training.spark.WordCount <inputpath><outputpath>")
       return
     }
-
     val conf = new SparkConf().setAppName("WordCount")
     val sc = new SparkContext(conf)
-
     val textFileRDD = sc.textFile(args(0))
     val wordRDD = textFileRDD.flatMap(line => line.split("\\t")).map(word => (word, 1)).reduceByKey((word1, word2) => word1 + word2)
-
     wordRDD.saveAsTextFile(args(1))
-
     sc.stop()
   }
 }
