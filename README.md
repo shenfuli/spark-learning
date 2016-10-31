@@ -34,6 +34,10 @@ ${SPARK_HOME}/bin/spark-submit \ <br>
 参数说明: <br>
 num-executors 启动executors的数量，executor-cores 启动的task任务数，实际的每次执行的task=num-executors * executor-cores
 
+
+# how to use spark sql 
+first,Enter into http://grouplens.org/datasets/movielens/ ,then down dataset ->MovieLens 10M Dataset->ml-10m.zip  
+
 # reference
 
 [1]  maven建立java和scala混合的项目 <br>
