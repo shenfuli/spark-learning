@@ -36,7 +36,7 @@ num-executors 启动executors的数量，executor-cores 启动的task任务数�
 
 
 # how to use spark sql 
-first,Enter into http://grouplens.org/datasets/movielens/ ,then down dataset ->MovieLens 10M Dataset->ml-10m.zip  
+first,Enter into http://grouplens.org/datasets/movielens/ ,then View MovieLens 10M Dataset-> click "ml-10m.zip" 
 
 # reference
 
@@ -44,3 +44,5 @@ first,Enter into http://grouplens.org/datasets/movielens/ ,then down dataset ->M
 http://blog.csdn.net/shenfuli/article/details/52668556<br>
 [2] windowsGithub上传代码<br>
 http://www.cnblogs.com/ruofengzhishang/p/3842587.html<br>
+[3] MovieLens 10M Dataset
+http://files.grouplens.org/datasets/movielens/ml-10m.zip<br>
