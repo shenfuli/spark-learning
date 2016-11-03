@@ -251,7 +251,7 @@ object Timex3SparkSQL {
     */
     val timex3featureDate = sqlContext.sql("select distinct value,name from timex3feature where type='DATE' order by value")
     timex3featureDate.show()
-    timex3featureDate.repartition(1).write.mode(SaveMode.Overwrite).json(dataPath + "timex3featureDate")
+    timex3featureDate.coalesce(1).write.mode(SaveMode.Overwrite).json(dataPath + "timex3featureDate")
 
     //2:DURATION
      /*
