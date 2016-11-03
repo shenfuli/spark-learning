@@ -41,7 +41,7 @@ first,Enter into http://grouplens.org/datasets/movielens/ ,then View MovieLens 1
 官方案例：参考[4] databricks 开源的程序包，该程序包详细步骤如下：
 https://github.com/shenfuli/sparktraining/blob/master/doc/spark-csv.md<br>
 本项目实现：
-sparktraining\src\main\scala\org\training\spark\sql\CarsSparkSQLCSV.scala 可执行的代码
+https://github.com/shenfuli/sparktraining/blob/master/src/main/scala/org/training/spark/sql/CarsSparkSQLCSV.scala 可执行的代码
 
 # reference
 
