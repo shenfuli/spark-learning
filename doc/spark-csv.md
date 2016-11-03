@@ -20,6 +20,14 @@ groupId: com.databricks
 artifactId: spark-csv_2.10
 version: 1.5.0
 ```
+eg：采用maven方式需要在pom.xml中应用
+```
+<dependency>
+    <groupId>com.databricks</groupId>
+    <artifactId>spark-csv_2.10</artifactId>
+    <version>1.5.0</version>
+</dependency>
+```
 ### Scala 2.11
 ```
 groupId: com.databricks
