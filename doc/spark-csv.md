@@ -39,7 +39,60 @@ $SPARK_HOME/bin/spark-shell --packages com.databricks:spark-csv_2.11:1.5.0
 ```
 $SPARK_HOME/bin/spark-shell --packages com.databricks:spark-csv_2.10:1.5.0
 ```
+备注： 进入安装SPARK的服务器，然后直接执行上述命令，会自动下载对应的依赖包，第一次执行出现的提示如下：
+```
+[hadoop@slave3 bin]$ $SPARK_HOME/bin/spark-shell --packages com.databricks:spark-csv_2.10:1.5.0
+Ivy Default Cache set to: /home/hadoop/.ivy2/cache
+The jars for the packages stored in: /home/hadoop/.ivy2/jars
+:: loading settings :: url = jar:file:/home/hadoop/caishi/local/spark-1.6.0/lib/spark-assembly-1.6.0-hadoop2.6.0.jar!/org/apache/ivy/core/settings/ivysettings.xml
+com.databricks#spark-csv_2.10 added as a dependency
+:: resolving dependencies :: org.apache.spark#spark-submit-parent;1.0
+        confs: [default]
+        found com.databricks#spark-csv_2.10;1.5.0 in central
+        found org.apache.commons#commons-csv;1.1 in central
+        found com.univocity#univocity-parsers;1.5.1 in central
+downloading https://repo1.maven.org/maven2/com/databricks/spark-csv_2.10/1.5.0/spark-csv_2.10-1.5.0.jar ...
+        [SUCCESSFUL ] com.databricks#spark-csv_2.10;1.5.0!spark-csv_2.10.jar (10205ms)
+downloading https://repo1.maven.org/maven2/org/apache/commons/commons-csv/1.1/commons-csv-1.1.jar ...
+        [SUCCESSFUL ] org.apache.commons#commons-csv;1.1!commons-csv.jar (1391ms)
+downloading https://repo1.maven.org/maven2/com/univocity/univocity-parsers/1.5.1/univocity-parsers-1.5.1.jar ...
+        [SUCCESSFUL ] com.univocity#univocity-parsers;1.5.1!univocity-parsers.jar (9225ms)
+:: resolution report :: resolve 21403ms :: artifacts dl 20831ms
+        :: modules in use:
+        com.databricks#spark-csv_2.10;1.5.0 from central in [default]
+        com.univocity#univocity-parsers;1.5.1 from central in [default]
+        org.apache.commons#commons-csv;1.1 from central in [default]
+        ---------------------------------------------------------------------
+        |                  |            modules            ||   artifacts   |
+        |       conf       | number| search|dwnlded|evicted|| number|dwnlded|
+        ---------------------------------------------------------------------
+        |      default     |   3   |   3   |   3   |   0   ||   3   |   3   |
+        ---------------------------------------------------------------------
+:: retrieving :: org.apache.spark#spark-submit-parent
+        confs: [default]
+        3 artifacts copied, 0 already retrieved (342kB/13ms)
+16/11/03 12:14:30 INFO spark.SecurityManager: Changing view acls to: hadoop
+16/11/03 12:14:30 INFO spark.SecurityManager: Changing modify acls to: hadoop
+16/11/03 12:14:30 INFO spark.SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users with view permissions: Set(hadoop); users with modify permissions: Set(hadoop)
+16/11/03 12:14:30 INFO spark.HttpServer: Starting HTTP Server
+16/11/03 12:14:30 INFO server.Server: jetty-8.y.z-SNAPSHOT
+16/11/03 12:14:30 INFO server.AbstractConnector: Started SocketConnector@0.0.0.0:58965
+16/11/03 12:14:30 INFO util.Utils: Successfully started service 'HTTP class server' on port 58965.
+Welcome to
+      ____              __
+     / __/__  ___ _____/ /__
+    _\ \/ _ \/ _ `/ __/  '_/
+   /___/ .__/\_,_/_/ /_/\_\   version 1.6.0
+      /_/
 
+Using Scala version 2.10.5 (Java HotSpot(TM) 64-Bit Server VM, Java 1.8.0_45)
+Type in expressions to have them evaluated.
+Type :help for more information.
+16/11/03 12:14:32 INFO spark.SparkContext: Running Spark version 1.6.0
+16/11/03 12:14:32 WARN spark.SparkConf: 
+SPARK_WORKER_INSTANCES was detected (set to '2').
+This is deprecated in Spark 1.0+.
+````
 ## Features
 This package allows reading CSV files in local or distributed filesystem as [Spark DataFrames](https://spark.apache.org/docs/1.6.0/sql-programming-guide.html).
 When reading files the API accepts several options:
