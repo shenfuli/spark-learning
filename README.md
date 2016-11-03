@@ -46,7 +46,7 @@ https://github.com/shenfuli/sparktraining/blob/master/doc/spark-csv.md
 http://blog.csdn.net/shenfuli/article/details/52668556<br>
 [2] windowsGithub上传代码<br>
 http://www.cnblogs.com/ruofengzhishang/p/3842587.html<br>
-[3] MovieLens 10M Dataset
+[3] MovieLens 10M Dataset<br>
 http://files.grouplens.org/datasets/movielens/ml-10m.zip<br>
 [4] CSV Data Source for Apache Spark 1.x
-https://github.com/databricks/spark-csv
+https://github.com/databricks/spark-csv<br>
