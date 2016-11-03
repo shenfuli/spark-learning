@@ -19,18 +19,18 @@ mvn archetype:generate
 # how to package&deploy spark programing 
 mvn clean compile package <br>
 执行完成会生成一个jar，然后参考bin/wordcount.sh 的shell脚本执行任务 <br>
-
-${SPARK_HOME}/bin/spark-submit \ <br>
-    --class org.training.spark.WordCount \ <br>
-    --master yarn-cluster \ <br>
-    --num-executors 2 \ <br>
-    --driver-memory 2g \ <br>
-    --executor-memory 2g \ <br>
-    --executor-cores 1 \ <br>
-    /home/hadoop/fuli.shen/lib/sparktraining-1.0-SNAPSHOT.jar \ <br>
-    /user/fuli.shen/data/wordcount/input \ <br>
-    /user/fuli.shen/data/wordcount/output <br>
-
+```
+${SPARK_HOME}/bin/spark-submit
+    --class org.training.spark.WordCount
+    --master yarn-cluster
+    --num-executors 2
+    --driver-memory 2g
+    --executor-memory 2g
+    --executor-cores 1
+    /home/hadoop/fuli.shen/lib/sparktraining-1.0-SNAPSHOT.jar
+    /user/fuli.shen/data/wordcount/input
+    /user/fuli.shen/data/wordcount/output
+```
 参数说明: <br>
 num-executors 启动executors的数量，executor-cores 启动的task任务数，实际的每次执行的task=num-executors * executor-cores
 
