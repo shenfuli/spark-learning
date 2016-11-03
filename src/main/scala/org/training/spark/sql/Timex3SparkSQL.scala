@@ -13,7 +13,7 @@ object Timex3SparkSQL {
 
 
     var masterUrl = "local[1]"
-    var dataPath = "hdfs://10.4.1.1:9000/user/fuli.shen/data/timex3-2m/"
+    var dataPath = "/user/fuli.shen/data/timex3/"
     if (args.length != 0) {
       masterUrl = args(0)
       dataPath = args(1)
