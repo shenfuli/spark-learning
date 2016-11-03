@@ -1,6 +1,6 @@
 #! /bin/bash
 
-HADOOP_HOME=/home/hadoop/hadoop-2.7.3
+HADOOP_HOME=/home/hadoop/hadoop-2.7.1
 TASK_NUM=10
 TASK_RECORD=400000
 
