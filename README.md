@@ -37,6 +37,8 @@ num-executors 启动executors的数量，executor-cores 启动的task任务数�
 
 # how to use spark sql 
 first,Enter into http://grouplens.org/datasets/movielens/ ,then View MovieLens 10M Dataset-> click "ml-10m.zip" 
+# how to user spark to operate csv file 
+https://github.com/shenfuli/sparktraining/blob/master/doc/spark-csv.md
 
 # reference
 
@@ -46,3 +48,5 @@ http://blog.csdn.net/shenfuli/article/details/52668556<br>
 http://www.cnblogs.com/ruofengzhishang/p/3842587.html<br>
 [3] MovieLens 10M Dataset
 http://files.grouplens.org/datasets/movielens/ml-10m.zip<br>
+[4] CSV Data Source for Apache Spark 1.x
+https://github.com/databricks/spark-csv
