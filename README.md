@@ -2,17 +2,17 @@
 Introduces the basics of spark
 
 # how to build dev environment of  spark 
-
-mvn archetype:generate \ <br>
--DarchetypeGroupId=org.scala-tools.archetypes \ <br>
--DarchetypeArtifactId=scala-archetype-simple  \ <br>
--DremoteRepositories=http://scala-tools.org/repo-releases \ <br>
--DarchetypeCatalog=internal \ <br>
--DinteractiveMode=false \ <br>
--Dversion=1.0-SNAPSHOT \ <br>
--DgroupId=org.training.spark \ <br>
--DartifactId=sparktraining <br>
-
+```
+mvn archetype:generate
+-DarchetypeGroupId=org.scala-tools.archetypes
+-DarchetypeArtifactId=scala-archetype-simple
+-DremoteRepositories=http://scala-tools.org/repo-releases
+-DarchetypeCatalog=internal
+-DinteractiveMode=false
+-Dversion=1.0-SNAPSHOT
+-DgroupId=org.training.spark
+-DartifactId=sparktraining
+```
 
 创建项目后就可以编写scala代码，以上仅生成scala项目的目录，如果需要java，可以参考[1] 
 
