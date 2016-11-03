@@ -65,6 +65,13 @@ object CarsSparkSQLCSV {
 
     /**
       * 3:csv write by DataFrame
+        +----+-----+
+        |year|model|
+        +----+-----+
+        |2012|    S|
+        |1997| E350|
+        |2015| Volt|
+        +----+-----+
       */
     val selectedData = customSchemaDF.select("year", "model")
     //selectedData.coalesce(1).write.mode(SaveMode.Overwrite).format("com.databricks.spark.csv").option("header", "true").save(dataPath + "newcars.csv")
