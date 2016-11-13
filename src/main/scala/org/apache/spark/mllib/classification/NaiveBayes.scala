@@ -19,8 +19,10 @@ package org.apache.spark.mllib.classification
 
 import java.lang.{Iterable => JIterable}
 
+import com.alibaba.fastjson.JSON
 import org.apache.spark.annotation.Since
 import org.apache.spark.mllib.linalg.{BLAS, DenseMatrix, DenseVector, SparseVector, Vector}
+import org.apache.spark.mllib.model.NaiveBayesData
 import org.apache.spark.mllib.regression.LabeledPoint
 import org.apache.spark.mllib.util.{Loader, Saveable}
 import org.apache.spark.rdd.RDD
@@ -209,8 +211,16 @@ object NaiveBayesModel extends Loader[NaiveBayesModel] {
 
     @Since("1.3.0")
     def load(sc: SparkContext, path: String): NaiveBayesModel = {
+      val json: String = "{\"labels\":[0.0,1.0,2.0],\"pi\":[-1.2039728043259361,-0.6931471805599456,-1.6094379124341005],\"theta\":[[-0.4054651081081644,-1" + ".791759469228055,-1.791759469228055],[-2.5649493574615367,-0.16705408466316607,-2.5649493574615367],[-1.3862943611198906,-1" + ".3862943611198906,-0.6931471805599453]],\"modelType\":\"multinomial\"}"
+      println("----------------------------load from mongodb---------------------------")
+      val naiveBayesData: NaiveBayesData = JSON.parseObject(json, classOf[NaiveBayesData])
+      System.out.println("label:" + naiveBayesData.getLabels.asScala.toArray)
+      System.out.println("pi:" + naiveBayesData.getPi.asScala.toArray)
+      System.out.println("theta:" + naiveBayesData.getTheta.asScala.toArray)
+      System.out.println("modelType:" + naiveBayesData.getModelType)
+
       val sqlContext = SQLContext.getOrCreate(sc)
-      // Load Parquet data.
+      // Load JSON data.
       val dataRDD = sqlContext.read.json(dataPath(path))
       // Check schema explicitly since erasure makes it hard to use match-case for checking.
       checkSchema[Data](dataRDD.schema)
@@ -229,7 +239,6 @@ object NaiveBayesModel extends Loader[NaiveBayesModel] {
       println("modelType:" + modelType);
       new NaiveBayesModel(labels, pi, theta, modelType)
     }
-
   }
 
   private[mllib] object SaveLoadV1_0 {
