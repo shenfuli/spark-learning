@@ -53,6 +53,6 @@ http://www.cnblogs.com/ruofengzhishang/p/3842587.html<br>
 http://files.grouplens.org/datasets/movielens/ml-10m.zip<br>
 [4] CSV Data Source for Apache Spark 1.x<br>
 https://github.com/databricks/spark-csv<br>
-[5]Introduce Scala Base using method By Scala Example <br
-https://github.com/shenfuli/sparktraining/tree/master/src/test/scala/examples<br
+[5]Introduce Scala Base using method By Scala Example <br>
+https://github.com/shenfuli/sparktraining/tree/master/src/test/scala/examples<br>
 
