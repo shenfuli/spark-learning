@@ -1,6 +1,7 @@
 package org.apache.spark.tool
 
-import org.apache.tool.{RedisTool, SerializeTool}
+import org.apache.tool.SerializeTool
+import org.training.spark.utils.{SerializeTool, RedisTool}
 
 
 /**

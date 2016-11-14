@@ -1,4 +1,4 @@
-package org.apache.tool
+package org.training.spark.utils
 
 import java.io.{ByteArrayInputStream, ByteArrayOutputStream, ObjectInputStream, ObjectOutputStream}
 

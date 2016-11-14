@@ -1,4 +1,4 @@
-package org.apache.tool
+package org.training.spark.utils
 
 import org.slf4j.{Logger, LoggerFactory}
 import redis.clients.jedis.Jedis

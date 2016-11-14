@@ -2,7 +2,7 @@ package org.apache.spark.tool
 
 import org.apache.hadoop.hbase.client._
 import org.apache.hadoop.hbase.{HBaseConfiguration, TableName}
-import org.apache.tool.SerializeTool
+import org.training.spark.utils.SerializeTool
 
 /**
   * scala使用hbase新api

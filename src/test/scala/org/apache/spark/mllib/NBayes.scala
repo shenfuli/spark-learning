@@ -6,7 +6,8 @@ import org.apache.spark.mllib.classification.{NaiveBayes, NaiveBayesModel}
 import org.apache.spark.mllib.linalg.Vectors
 import org.apache.spark.mllib.regression.LabeledPoint
 import org.apache.spark.{SparkConf, SparkContext}
-import org.apache.tool.{RedisTool, SerializeTool}
+import org.apache.tool.SerializeTool
+import org.training.spark.utils.{SerializeTool, RedisTool}
 
 /**
   * Function： 测试案例： 通过贝叶斯分类算法挖掘用户性别,离线计算并生成模型

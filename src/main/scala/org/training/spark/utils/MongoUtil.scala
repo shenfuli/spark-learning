@@ -1,10 +1,10 @@
-package com.caishi.util
+package org.training.spark.utils
 
 import java.util
 
-import com.mongodb.{MongoCredential, ServerAddress, MongoClient}
-import com.mongodb.client.model.{UpdateOptions, Filters}
+import com.mongodb.client.model.{Filters, UpdateOptions}
 import com.mongodb.client.result.UpdateResult
+import com.mongodb.{MongoClient, MongoCredential, ServerAddress}
 import org.bson.Document
 
 /**
