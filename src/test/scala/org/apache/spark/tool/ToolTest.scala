@@ -1,7 +1,6 @@
 package org.apache.spark.tool
 
-import org.apache.tool.SerializeTool
-import org.training.spark.utils.{SerializeTool, RedisTool}
+import org.training.spark.utils.{RedisTool, SerializeTool}
 
 
 /**
@@ -18,11 +17,11 @@ object ToolTest {
     val serializeTool = new SerializeTool
     //对象序列化
     val serializePerson: Array[Byte] = serializeTool.serialize(person)
-    println("serializePerson:" + serializePerson)//serialize:[B@4cf777e8
+    println("serializePerson:" + serializePerson) //serialize:[B@4cf777e8
 
     //对象反序列化
     val unserializePerson: AnyRef = serializeTool.unserialize(serializePerson)
-    println("unserializePerson:" + unserializePerson)//unserialize:Person(zhangsan,30)
+    println("unserializePerson:" + unserializePerson) //unserialize:Person(zhangsan,30)
 
     //序列化的对象存储redis
     val redisTool = new RedisTool("10.1.1.122", 6385, "9icaishi")
@@ -31,9 +30,9 @@ object ToolTest {
     //序列化的对象读取redis
     val personReader: Array[Byte] = redisTool.read(key.getBytes())
     val unserializePerson2: AnyRef = serializeTool.unserialize(personReader)
-    if(unserializePerson2.isInstanceOf[Person]){
+    if (unserializePerson2.isInstanceOf[Person]) {
       val person1: Person = unserializePerson2.asInstanceOf[Person]
-      println(person1.name + "->" + person1.age)//zhangsan->30
+      println(person1.name + "->" + person1.age) //zhangsan->30
     }
   }
 }

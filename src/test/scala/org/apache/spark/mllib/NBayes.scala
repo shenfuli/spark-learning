@@ -6,8 +6,7 @@ import org.apache.spark.mllib.classification.{NaiveBayes, NaiveBayesModel}
 import org.apache.spark.mllib.linalg.Vectors
 import org.apache.spark.mllib.regression.LabeledPoint
 import org.apache.spark.{SparkConf, SparkContext}
-import org.apache.tool.SerializeTool
-import org.training.spark.utils.{SerializeTool, RedisTool}
+import org.training.spark.utils.{RedisTool, SerializeTool}
 
 /**
   * Function： 测试案例： 通过贝叶斯分类算法挖掘用户性别,离线计算并生成模型
@@ -89,7 +88,7 @@ object NBayes {
 
 
     println("=======================读取MongodbGridFS中序列化的数据:sameModelFromGridFS=======================")
-    
+
 
 
     println("=======================读取redis中序列化的数据:sameModelFromRedis=======================")
