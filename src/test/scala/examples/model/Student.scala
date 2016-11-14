@@ -1,4 +1,4 @@
-package examples
+package examples.model
 
 /**
   * Created by fuli.shen on 2016/11/13.
