@@ -8,7 +8,7 @@ package examples
   *
   * Created by fuli.shen on 2016/11/13.
   */
-object Test07_Map {
+object Test07_Map01 {
 
   def main(args: Array[String]) {
     // Empty hash table whose keys are strings and values are integers:
