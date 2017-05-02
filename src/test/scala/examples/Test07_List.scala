@@ -45,5 +45,11 @@ object Test07_List {
       })
     })
 
+
+    val filterRank1Label = List(0,1,5,9,10,11,12,13,14,15,17,20,25,30,31,32,36,37,38,39)
+    val rank1Label = "1"
+    if(filterRank1Label.contains(rank1Label.toInt)){
+      println("true")
+    }
   }
 }

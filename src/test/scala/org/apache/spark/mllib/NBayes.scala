@@ -61,26 +61,26 @@ object NBayes {
 
 
     //---------------------------------------重点看这里-------------------------------------------------------------
-    val key = "rank1category:nbayes"
+      val key = "rank1category:nbayes"
 
-    /**
-      * redis 相关
-      */
-    val redisTool = new RedisTool("10.1.1.122", 6385, "9icaishi")
-    val serializeTool = new SerializeTool
+      /**
+        * redis 相关
+        */
+      val redisTool = new RedisTool("10.1.1.122", 6385, "9icaishi")
+      val serializeTool = new SerializeTool
 
-    /**
-      * hbase 相关
-      */
-    val zookeeperQuorum = "10.1.1.120:2181,10.1.1.130:2181,10.1.1.140:2181"
-    val hbaseConf = HBaseConfiguration.create()
-    hbaseConf.set("hbase.zookeeper.quorum", zookeeperQuorum)
-    val connection = ConnectionFactory.createConnection(hbaseConf)
-    val mllibModel: Table = connection.getTable(TableName.valueOf("mllib_model"))
+      /**
+        * hbase 相关
+        */
+      val zookeeperQuorum = "10.1.1.120:2181,10.1.1.130:2181,10.1.1.140:2181"
+      val hbaseConf = HBaseConfiguration.create()
+      hbaseConf.set("hbase.zookeeper.quorum", zookeeperQuorum)
+      val connection = ConnectionFactory.createConnection(hbaseConf)
+      val mllibModel: Table = connection.getTable(TableName.valueOf("mllib_model"))
 
-    val modelSerialize: Array[Byte] = serializeTool.serialize(model) //model 序列化
-    //序列化数据存储redis
-    redisTool.write(key.getBytes(), modelSerialize)
+      val modelSerialize: Array[Byte] = serializeTool.serialize(model) //model 序列化
+      //序列化数据存储redis
+      redisTool.write(key.getBytes(), modelSerialize)
     ////序列化数据存储hbase
     val modelPut = new Put(key.getBytes())
     modelPut.addColumn("info".getBytes(), "data".getBytes(), modelSerialize)

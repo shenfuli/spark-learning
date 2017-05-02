@@ -23,7 +23,7 @@ public class JSparseNBayesPredict {
 
         SparkConf sparkConf = new SparkConf().setAppName("JSparseNBayesPredict").setMaster("local");
         JavaSparkContext jsc = new JavaSparkContext(sparkConf);
-        NaiveBayesModel naiveBayesModel = NaiveBayesModel.load(jsc.sc(), "hdfs://10.4.1.1:9000/news/mllib/R1-C/model");
+        NaiveBayesModel naiveBayesModel = NaiveBayesModel.load(jsc.sc(), "hdfs://10.4.1.1:9000/news/mllib/R2-C/model");
         System.out.println("naiveBayesModel:" + naiveBayesModel);
         //特征向量的维度
         int numFeatures = 272479;
@@ -33,6 +33,7 @@ public class JSparseNBayesPredict {
         double[] values = new double[]{2.0, 2.0, 8.0, 2.0, 3.0, 17.0, 5.0, 18.0, 9.0, 16.0, 11.0, 2.0, 3.0, 6.0, 2.0, 5.0, 2.0, 4.0, 4.0, 2.0, 5.0, 7.0, 3.0, 2.0, 2.0, 2.0, 2.0, 10.0, 4.0, 8.0, 2.0, 2.0, 2.0, 2.0, 10.0, 2.0, 6.0, 4.0, 7.0, 2.0, 4.0, 4.0, 2.0, 6.0, 6.0, 7.0, 2.0, 2.0, 2.0, 2.0, 3.0, 7.0, 2.0, 2.0, 3.0, 2.0, 2.0, 2.0, 2.0, 2.0, 2.0, 2.0, 2.0, 4.0, 2.0, 2.0, 2.0, 3.0, 2.0, 4.0, 2.0, 2.0, 2.0, 4.0, 2.0, 2.0, 2.0, 2.0, 3.0, 3.0, 2.0, 2.0} ;
         Vector featuresVector =   Vectors.sparse(numFeatures, indices, values);
         double predict = naiveBayesModel.predict(featuresVector);
+
 
         System.out.println("predict->" + predict); //predict->4.0
 

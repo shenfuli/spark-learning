@@ -1,0 +1,35 @@
+Feature Extraction and Transformation - spark.mllib
+1、TF-IDF
+Term frequency-inverse document frequency (TF-IDF) 是一种文本提取成特征向量一种方法，广泛应用于文本挖掘中。
+
+1.1 TF-IDF作用： 评估一个字词在一个文档或者一个语料库中的重要程度。字词的重要性在文档中出现的次数成正比，但随着它在整个语料库中出现的频率成反比。
+
+1.2 TF词频(Term Frequency)：TF表示词条在文档d中出现的频率。TF=词在文档中出现次数/文档中所有字词出现次数之和。
+
+1.3 逆向文件频率（inverse document frequency，IDF）：一个词语普通重要性的度量。IDF=总文档数目/包含该词语之文档的数目 + lamda ，再将得到的商取对数。
+
+IDF 实际上是一个权重计算。一个词条在整个文档中出现越多，IDF 的结果就越小（权重越小）。反之，IDF权重越大，越能表达文档主题含义。
+其中： 权重计算方法经常会和余弦相似度(cosine similarity)一同使用于向量空间模型中，用以判断两份文件之间的相似性。例如：
+文档1：单词1  单词2  单词3 单词4
+文档2：单词1  单词5  单词6 单词7
+通过TF-IDF 把文档1和文档2 转成特征向量，然后可以使用求两个特征向量的距离，从而可以判断出他们之间的相似度。
+
+
+
+
+widely used in text mining to reflect the importance
+of a term to a document in the corpus. Denote a term by tt, a document by dd, and the corpus by DD. Term frequency TF is the number of times that term tt
+appears in document dd, while document frequency DF(t,D)DF(t,D) is the number of documents that contains term tt. If we only use term frequency to measure
+the importance, it is very easy to over-emphasize terms that appear very often but carry little information about the document, e.g., “a”, “the”, and
+“of”. If a term appears very often across the corpus, it means it doesn’t carry special information about a particular document. Inverse document
+frequency is a numerical measure of how much information a term provides:
+
+
+
+# reference
+
+[1]  mllib-feature-extraction
+http://spark.apache.org/docs/1.6.3/mllib-feature-extraction.html
+[2]tf-idf
+http://baike.baidu.com/link?url=AJFgv2HD1HK3F8o-_hjWkvUy3qJcOGRMMdZGrGOY854w6b_MkNPNcY9fEQOlvXVHYPWXy091Ssi6bGaa9FzZB_
+

@@ -4,7 +4,7 @@ package examples
   * FlatMap 的使用 ： 一转多的概念
   *
   */
-object Test07_FlatMap {
+object Test07_FlatMap01 {
 
   def main(args: Array[String]) {
 
