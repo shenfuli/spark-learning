@@ -1,4 +1,4 @@
-package org.training.spark.mllib.featureExtra
+package org.training.spark.mllib.featureExtract
 
 import org.apache.spark.ml.feature.Word2Vec
 import org.apache.spark.sql.SQLContext
@@ -7,7 +7,7 @@ import org.apache.spark.{SparkConf, SparkContext}
 /**
   * Created by fuli.shen on 2017/1/4.
   */
-object Word2VectorFeatureExtra {
+object Word2VectorFeatureExtract {
 
   def main(args: Array[String]): Unit = {
 
