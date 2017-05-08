@@ -24,7 +24,7 @@ object Test07_MapSorted03 {
 
     val features = "5538:4 1417:2 245:4 6127:4 144812:2 3482:2 1436:3 63:2"
     val newsFeatures = sortedFeatures(features)
-    println(newsFeatures)
+    println(newsFeatures)//63:2 245:4 1417:2 1436:3 3482:2 5538:4 6127:4 144812:2
   }
 
   /**

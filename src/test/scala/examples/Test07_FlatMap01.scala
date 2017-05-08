@@ -13,6 +13,13 @@ object Test07_FlatMap01 {
     wordCountMapArray.flatMap(wordCountMap => {
       wordCountMap
     }).foreach(println)
+    /*
+      (福田,9)
+      (卡车,2)
+      (奖品,10)
+      (福田,1)
+      (高速,2)
+     */
   }
 }
 

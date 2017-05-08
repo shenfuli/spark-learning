@@ -1,30 +1,35 @@
 package examples
 
+import scala.collection.mutable.ArrayBuffer
+
 /**
   * Scala 中可变的数组
+  *
+  * http://www.artima.com/pins1ed/collections.html
+  *
   * Created by fuli.shen on 2016/11/13.
   */
 object Test07_ArrayBuffer {
 
   def main(args: Array[String]) {
 
-    val vectorMeta = Map("双排" -> 1, "通道" -> 2, "卡车" -> 3)
+    //To use an ArrayBuffer, you must first import it from the mutable collections package:
+    val intArrayBuffer = new ArrayBuffer[Int]()
+    intArrayBuffer+=10
+    intArrayBuffer+=20
+    println("1: intArrayBuffer:" + intArrayBuffer)
+    intArrayBuffer.map(x=>println(x))
 
-    val words = "[双排:3, 通道:4, 政府:2, 高速:2,福田:1,卡车:4]"
 
-    val wordsList = words.replace("[", "").replace("]", "").split(",")
-    var features = ""
-    wordsList.filter(words => !"".equals(words) && words.split(":").length == 2).map(words => {
-      val wordCount = words.split(":")
-      if (wordCount.length == 2) {
-        val word = wordCount(0).trim
-        val value = vectorMeta.getOrElse(word, 0)
-        val count = wordCount(1).trim.toInt
-        if (0 != value) {
-          features += value + ":" + count + " "
-        }
-      }
+    val wordsMap = Map("A"->1,"B"->2,"C"->10)
+
+    val mapArrayBuffer = new ArrayBuffer[String]()
+    wordsMap.foreach(x=>{
+      val word = x._1
+      val count = x._2
+     val fea = word+":" +count
+      mapArrayBuffer+=fea
     })
-    println(features.trim)//1:3 2:4 3:4
+    println(mapArrayBuffer)//ArrayBuffer(A:1, B:2, C:10)
   }
 }
