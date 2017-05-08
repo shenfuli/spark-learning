@@ -25,6 +25,14 @@ object Test07_Map02 {
     )
     println(c) //Map(G01 -> 1, G02 -> 15, G03 -> 2) , 发现会对相同KEY的Value进行相加
 
+    val mergeABMap = a ++ b.map({
+      case (b_k, b_v) => {
+        val k = b_k
+        val v = b_v + a.getOrElse(b_k, 0)
+        (k, v)
+      }
+    })
+    println("mergeABMap:" + mergeABMap)//mergeABMap:Map(G01 -> 1, G02 -> 15, G03 -> 2)
     println("-------------------------------案例2：可以使用 ++ 运算符或 Map.++() 方法来连接两个 Map，Map 合并时会移除重复的 key-------")
     //  ++ 作为运算符
     val merge1AB = a ++ b
