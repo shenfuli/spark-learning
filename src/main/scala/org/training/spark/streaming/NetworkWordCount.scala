@@ -5,6 +5,8 @@ import org.apache.spark.storage.StorageLevel
 import org.apache.spark.streaming.{Seconds, StreamingContext}
 
 /**
+  * 0： 下载spark code
+  * git clone -b v1.6.3 git@github.com:apache/spark.git
   * 1： 登陆linux 系统执行下面的命令
   * [root@slave3 ~]# nc -lk 9999
   * hello world hello me hello you
