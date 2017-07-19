@@ -1,4 +1,4 @@
-# fuli.shen sparktraining
+# fuli.shen spark learning
 Introduces the basics of spark,The Program Spark-1.6.0,JDK-1.8,Maven-3.0.3，Scala-10.5
 
 # how to build dev environment of  spark 
