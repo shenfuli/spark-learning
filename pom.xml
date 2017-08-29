@@ -2,13 +2,13 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>org.training.spark</groupId>
-    <artifactId>sparktraining</artifactId>
+    <artifactId>sparklearning</artifactId>
     <version>1.0-SNAPSHOT</version>
-    <name>sparktraining</name>
+    <name>sparklearning</name>
     <url>http://maven.apache.org</url>
     <properties>
         <scala.version>2.10.5</scala.version>
-        <spark.version>1.6.0</spark.version>
+        <spark.version>1.6.3</spark.version>
     </properties>
     <dependencies>
         <!-- spark jar -->
